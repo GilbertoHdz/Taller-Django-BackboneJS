@@ -59,10 +59,9 @@
 										Choose your city<span class="caret"></span>
 							</button>
 							<ul class="dropdown-menu">
-								<li><a href="#">Xalapa</a></li>
-								<li><a href="#">Veracruz</a></li>
-					          	<li><a href="#">Cosamaloapan</a></li>
-					          	<li><a href="#">Tlacotalpan</a></li>
+								{% for city in cities  %}
+									<li><a href="#">{{city.name}}</a></li>
+								{% endfor %}
 					        </ul>
       					</div><!-- /btn-group -->
       					<input type="text" class="form-control" placeholder="Find your favorite restaurant">
@@ -79,15 +78,13 @@
 						<div class="chekbox">
 							<label for="">	<input type="checkbox"> Todo </label>
 						</div>
-						<div class="chekbox">
-							<label for="">	<input type="checkbox"> Seafood </label>
-						</div>
-						<div class="chekbox">
-							<label for="">	<input type="checkbox"> Mead </label>
-						</div>
-						<div class="chekbox">
-							<label for="">	<input type="checkbox"> Vegetables </label>
-						</div>
+
+						{% for category in categories %}
+							<div class="chekbox">
+								<label for="">	<input type="checkbox"> {{category.name}} </label>
+							</div>
+						{% endfor %}
+					
 					</div>
 
 					<div class="form-group">
@@ -95,15 +92,13 @@
 						<div class="chekbox">
 							<label for="">	<input type="checkbox"> Todo </label>
 						</div>
-						<div class="chekbox">
-							<label for="">	<input type="checkbox"> Cash </label>
-						</div>
-						<div class="chekbox">
-							<label for="">	<input type="checkbox"> Visa </label>
-						</div>
-						<div class="chekbox">
-							<label for="">	<input type="checkbox"> Máster Card </label>
-						</div>
+
+						{% for payment in payments %}
+							<div class="chekbox">
+								<label for="">	<input type="checkbox"> {{ payment.pay }} </label>
+							</div>
+						{% endfor %}
+
 					</div>
 
 				</div> <!-- / 1/4ta parte del contenido -->
@@ -111,61 +106,27 @@
 				<div class="col-sm-9">
 					<div class="list-group"> 
 						<div class="list-group">
-							<!-- separar los items -->
-							<a href="#" class="list-group-item">
-								<!-- Imagen -->
-								<div class="col-sm-3">
-									<img src="http://placehold.it/350x250" alt="" class="media-object img-rounded img-responsive">
-								</div>
-								<!-- Texto -->
-								<div class="col-sm-6">
-									<h3>Xalapa</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure, veniam laborum repellat sequi aliquam ad fuga et, aliquid, consequuntur molestias ea illum deserunt itaque porro vel, reiciendis ex eum natus.</p>
-								</div>
-								<!-- Detalles -->
-								<div class="col-sm-3 text-center">
-									<h2>4 <small>tips</small></h2>
-									<button type="button" class="btn btn-primary btn-lg btn-block">Show details</button>
-								</div>
-							</a>
 
-							<!-- separar los items -->
-							<a href="#" class="list-group-item">
-								<!-- Imagen -->
-								<div class="col-sm-3">
-									<img src="http://placehold.it/350x250" alt="" class="media-object img-rounded img-responsive">
-								</div>
-								<!-- Texto -->
-								<div class="col-sm-6">
-									<h3>Xalapa</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure, veniam laborum repellat sequi aliquam ad fuga et, aliquid, consequuntur molestias ea illum deserunt itaque porro vel, reiciendis ex eum natus.</p>
-								</div>
-								<!-- Detalles -->
-								<div class="col-sm-3 text-center">
-									<h2>4 <small>tips</small></h2>
-									<button type="button" class="btn btn-primary btn-lg btn-block">Show details</button>
-								</div>
-							</a>
-
-							<!-- separar los items -->
-							<a href="#" class="list-group-item">
-								<!-- Imagen -->
-								<div class="col-sm-3">
-									<img src="http://placehold.it/350x250" alt="" class="media-object img-rounded img-responsive">
-								</div>
-								<!-- Texto -->
-								<div class="col-sm-6">
-									<h3>Xalapa</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure, veniam laborum repellat sequi aliquam ad fuga et, aliquid, consequuntur molestias ea illum deserunt itaque porro vel, reiciendis ex eum natus.</p>
-								</div>
-								<!-- Detalles -->
-								<div class="col-sm-3 text-center">
-									<h2>4 <small>tips</small></h2>
-									<button type="button" class="btn btn-primary btn-lg btn-block">Show details</button>
-								</div>
-							</a>
+							{% for restaurant, tips in restaurants %}
+								<!-- separar los items -->
+								<a href="#" class="list-group-item">
+									<!-- Imagen -->
+									<div class="col-sm-3">
+										<img src="{{ MEDIA_URL }}{{ restaurant.imagen }}" alt="" class="media-object img-rounded img-responsive">
+									</div>
+									<!-- Texto -->
+									<div class="col-sm-6">
+										<h3>{{ restaurant.name }}</h3>
+										<p>{{ restaurant.description }}</p>
+									</div>
+									<!-- Detalles -->
+									<div class="col-sm-3 text-center">
+										<h2> {{ tips }} <small>tips</small></h2>
+										<button type="button" class="btn btn-primary btn-lg btn-block">Show details</button>
+									</div>
+								</a>
+							{% endfor %}
 							
-
 						</div>
 					</div>
 
