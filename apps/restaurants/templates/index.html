@@ -1,13 +1,187 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Inicio</title>
-	{% load static from staticfiles %}
-	<link rel="stylesheet" href="{% static 'css/main.css' %}">
-</head>
-<body>
-	<h2>Hola Mundo</h2>
-	
-</body>
+{% load static from staticfiles %}
+
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+        <script src="{% static 'js/vendor/modernizr-2.8.3-respond-1.4.2.min.js' %}"></script>
+    </head>
+    <body>
+
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div class="navbar navbar-default">
+        	<div class="container">
+        		<div class="navbar-header">
+        			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" 
+        					data-target="#menu" aria-expanded="false">
+        				<span class="sr-only">Toggle navigation</span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+			      	</button>
+			      	<a class="navbar-brand" href="#">WhereToEat</a>
+			    </div>
+
+			    <div class="collapse navbar-collapse navbar-right" id="menu">
+			    	<a href="#" class="btn btn-default navbar-btn">Login Externo</a>
+			    </div>
+
+        	</div>
+        </div>
+
+        <div class="container">
+        	
+			<div class="row">
+				
+				<div class="col-sm-6">
+					<h3>Find the best place to eat</h3>
+				</div>
+
+				<div class="col-sm-6 buscador-home">
+					<div class="input-group">
+						<div class="input-group-btn">
+							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" 
+									aria-haspopup="true" aria-expanded="false">
+										Choose your city<span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu">
+								<li><a href="#">Xalapa</a></li>
+								<li><a href="#">Veracruz</a></li>
+					          	<li><a href="#">Cosamaloapan</a></li>
+					          	<li><a href="#">Tlacotalpan</a></li>
+					        </ul>
+      					</div><!-- /btn-group -->
+      					<input type="text" class="form-control" placeholder="Find your favorite restaurant">
+    				</div><!-- /input-group -->
+				</div>
+
+			</div> <!-- / First row -->
+
+			<div class="row contenido-home">
+
+				<div class="col-sm-3">
+					<div class="form-group">
+						<label for="">Kind of food</label>
+						<div class="chekbox">
+							<label for="">	<input type="checkbox"> Todo </label>
+						</div>
+						<div class="chekbox">
+							<label for="">	<input type="checkbox"> Seafood </label>
+						</div>
+						<div class="chekbox">
+							<label for="">	<input type="checkbox"> Mead </label>
+						</div>
+						<div class="chekbox">
+							<label for="">	<input type="checkbox"> Vegetables </label>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="">Such payments</label>
+						<div class="chekbox">
+							<label for="">	<input type="checkbox"> Todo </label>
+						</div>
+						<div class="chekbox">
+							<label for="">	<input type="checkbox"> Cash </label>
+						</div>
+						<div class="chekbox">
+							<label for="">	<input type="checkbox"> Visa </label>
+						</div>
+						<div class="chekbox">
+							<label for="">	<input type="checkbox"> Máster Card </label>
+						</div>
+					</div>
+
+				</div> <!-- / 1/4ta parte del contenido -->
+
+				<div class="col-sm-9">
+					<div class="list-group"> 
+						<div class="list-group">
+							<!-- separar los items -->
+							<a href="#" class="list-group-item">
+								<!-- Imagen -->
+								<div class="col-sm-3">
+									<img src="http://placehold.it/350x250" alt="" class="media-object img-rounded img-responsive">
+								</div>
+								<!-- Texto -->
+								<div class="col-sm-6">
+									<h3>Xalapa</h3>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure, veniam laborum repellat sequi aliquam ad fuga et, aliquid, consequuntur molestias ea illum deserunt itaque porro vel, reiciendis ex eum natus.</p>
+								</div>
+								<!-- Detalles -->
+								<div class="col-sm-3 text-center">
+									<h2>4 <small>tips</small></h2>
+									<button type="button" class="btn btn-primary btn-lg btn-block">Show details</button>
+								</div>
+							</a>
+
+							<!-- separar los items -->
+							<a href="#" class="list-group-item">
+								<!-- Imagen -->
+								<div class="col-sm-3">
+									<img src="http://placehold.it/350x250" alt="" class="media-object img-rounded img-responsive">
+								</div>
+								<!-- Texto -->
+								<div class="col-sm-6">
+									<h3>Xalapa</h3>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure, veniam laborum repellat sequi aliquam ad fuga et, aliquid, consequuntur molestias ea illum deserunt itaque porro vel, reiciendis ex eum natus.</p>
+								</div>
+								<!-- Detalles -->
+								<div class="col-sm-3 text-center">
+									<h2>4 <small>tips</small></h2>
+									<button type="button" class="btn btn-primary btn-lg btn-block">Show details</button>
+								</div>
+							</a>
+
+							<!-- separar los items -->
+							<a href="#" class="list-group-item">
+								<!-- Imagen -->
+								<div class="col-sm-3">
+									<img src="http://placehold.it/350x250" alt="" class="media-object img-rounded img-responsive">
+								</div>
+								<!-- Texto -->
+								<div class="col-sm-6">
+									<h3>Xalapa</h3>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure, veniam laborum repellat sequi aliquam ad fuga et, aliquid, consequuntur molestias ea illum deserunt itaque porro vel, reiciendis ex eum natus.</p>
+								</div>
+								<!-- Detalles -->
+								<div class="col-sm-3 text-center">
+									<h2>4 <small>tips</small></h2>
+									<button type="button" class="btn btn-primary btn-lg btn-block">Show details</button>
+								</div>
+							</a>
+							
+
+						</div>
+					</div>
+
+				</div> <!-- / 3/4 partes del contenido -->
+				
+			</div> <!-- / Second row -->
+
+
+
+
+        </div> <!-- /Container global -->
+    
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="{% static "js/vendor/jquery-1.11.2.min.js" %}"><\/script>')</script>
+
+        <script src="{% static 'js/vendor/bootstrap.min.js' %}"></script>
+    </body>
 </html>
